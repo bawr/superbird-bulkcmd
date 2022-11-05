@@ -2,7 +2,13 @@
 # Note, you must run disable-avb2.sh first!
 mount -o remount,rw /
 
-cat << EOF > /etc/init.d/S49usbgadget
+cat << EOF > /etc/init.d/S90usbgadget
+#/bin/sh
+
+if [[ -x /etc/init.d/S49usbgadget ]]
+then
+    exit 0
+fi
 
 mount -t configfs none /sys/kernel/config/
 
@@ -17,7 +23,7 @@ echo 0x0200 > /sys/kernel/config/usb_gadget/g1/bcdUSB
 
 mkdir -p /sys/kernel/config/usb_gadget/g1/strings/0x409
 
-echo 123457 > /sys/kernel/config/usb_gadget/g1/strings/0x409/serialnumber
+echo maku-01 > /sys/kernel/config/usb_gadget/g1/strings/0x409/serialnumber
 echo Spotify > /sys/kernel/config/usb_gadget/g1/strings/0x409/manufacturer
 echo Superbird > /sys/kernel/config/usb_gadget/g1/strings/0x409/product
 
@@ -38,4 +44,5 @@ sleep 5s
 echo ff400000.dwc2_a > /sys/kernel/config/usb_gadget/g1/UDC
 EOF
 
-chmod +x /etc/init.d/S49usbgadget
+chmod +x /etc/init.d/S90usbgadget
+chown root:root /etc/init.d/S90usbgadget

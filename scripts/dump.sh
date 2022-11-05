@@ -4,8 +4,9 @@ UPDTOOL=$DIR/../bin/update
 
 mkdir -p $DIR/dump
 $UPDTOOL bulkcmd "amlmmc part 1"
-$UPDTOOL mread store bootloader normal 0x400000 dump/bootloader.dump
 $UPDTOOL mread store env normal 0x800000 dump/env.dump
+$UPDTOOL mread store system_a normal 0x2040B000 dump/system_a.dump
+exit 0
 $UPDTOOL mread store fip_a normal 0x400000 dump/fip_a.dump
 $UPDTOOL mread store fip_b normal 0x400000 dump/fip_b.dump
 $UPDTOOL mread store logo normal 0x800000 dump/logo.dump
