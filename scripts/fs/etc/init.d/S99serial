@@ -1,0 +1,14 @@
+#!/bin/sh
+
+/usr/libexec/bluetooth/bluetoothd --compat --plugin=gap,deviceinfo &
+sleep 1
+sdptool add SP
+sleep 1
+bluetoothctl power on
+bluetoothctl discoverable on
+sleep 1
+sdptool add SP
+sleep 1
+##comm -r watch /dev/rfcomm1 1 setsid /bin/sh -c 'exec /bin/sh <> /dev/rfcomm1 >&0 2>&1' &
+rfcomm -r watch /dev/rfcomm1 1 getty -w -n -l /bin/sh 115200 rfcomm1 xterm-256color &
+sleep 1
