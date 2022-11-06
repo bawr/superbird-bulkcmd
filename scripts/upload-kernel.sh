@@ -2,9 +2,9 @@
 # Upload & boot kernel/ramdisk when U-Boot is in 'USB Burning' mode
 DIR=$(dirname $(realpath $0))
 UPDTOOL=$DIR/../bin/update
-KERNEL=$DIR/../images/superbird.kernel.img
+KERNEL=$DIR/../images/superbird.kernel.better.img
 KERNEL_ADDR=0x01080000
-INITRD=$DIR/../images/superbird.initrd.img
+INITRD=$DIR/../images/superbird.initrd.better.img
 INITRD_ADDR=0x13000000
 ENV=$DIR/env.txt
 ENV_ADDR=0x13000000

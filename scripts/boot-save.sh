@@ -6,6 +6,6 @@ DIR=$(dirname $(realpath $0))
 UPDTOOL=$DIR/../bin/update
 
 $UPDTOOL bulkcmd 'amlmmc env'
-$UPDTOOL bulkcmd 'setenv bootcmd run storeboot'
-$UPDTOOL bulkcmd 'setenv storeargs ${storeargs_default} run update\;'
+$UPDTOOL bulkcmd 'setenv initargs_default ${initargs}'
+$UPDTOOL bulkcmd 'setenv storeargs_default ${storeargs}'
 $UPDTOOL bulkcmd 'env save'

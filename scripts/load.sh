@@ -17,6 +17,6 @@ $UPDTOOL mwrite dump/env.dump store env normal
 #UPDTOOL mwrite dump/boot_b.dump store boot_b normal
 #UPDTOOL mwrite dump/misc.dump store misc normal
 #UPDTOOL mwrite dump/settings.dump store settings normal
-$UPDTOOL mwrite dump/system_a.dump store system_a normal
+#UPDTOOL mwrite dump/system_a.dump store system_a normal
 #UPDTOOL mwrite dump/system_b.dump store system_b normal
 #UPDTOOL mwrite dump/data.dump store data normal

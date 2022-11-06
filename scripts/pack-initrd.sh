@@ -5,7 +5,7 @@ DIR=$(dirname $(realpath $0))
 INITRD_DIR=$DIR/../initrd
 CPIO_BASE_FILE=$DIR/../images/superbird.initrd-base.cpio
 CPIO_FILE=$DIR/../images/superbird.initrd.cpio
-INITRD_FILE=$DIR/../images/superbird.initrd.img
+INITRD_FILE=$DIR/../images/superbird.initrd.better.img
 
 if [ ! -f "$CPIO_BASE_FILE" ]
 then
